@@ -1,45 +1,66 @@
-<header class="navbar">
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#articles">Articles</a></li>
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#collabs">Collabs</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="active">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tornike Mandaria | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-<div class="socials">
-  <a href="https://x.com/tokmando?lang=en" target="_blank">X</a>
-  <a href="https://www.linkedin.com/in/tornike-mandaria-52115a131/" target="_blank">LinkedIn</a>
-  <a href="https://www.facebook.com/tokmandaria/" target="_blank">Facebook</a>
-  <a href="mailto:tokmandaria@gmail.com">Mail</a>
-</div>
+  <!-- STICKY NAVBAR -->
+  <header class="navbar">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#collabs">Collabs</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero" id="hero">
-  <img src="assets/placeholder-hero.jpg" class="hero-bg" alt="Background" />
-  <h1 class="title-changing"><span id="title-text">Journalist</span></h1>
-
-  <div class="intro-card">
-    <p>Hello 👋</p>
-    <h2>I’m <strong>Tornike Mandaria</strong></h2>
-    <p>
-      A multimedia journalist based in Tbilisi, Georgia, with 8+ years of experience covering
-      politics, conflict, displacement, state repression, Russian influence across the Caucasus and post-Soviet space.
-    </p>
-    <p>
-      Worked with Sky News (UK), Radio Free Europe/Radio Liberty, Süddeutsche Zeitung, taz, Eurasianet.
-    </p>
-    <p>Georgian, English, and Russian.</p>
+  <!-- FLOATING SOCIAL BUTTONS -->
+  <div class="socials">
+    <a href="https://x.com/tokmando?lang=en" target="_blank">X</a>
+    <a href="https://www.linkedin.com/in/tornike-mandaria-52115a131/" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com/tokmandaria/" target="_blank">Facebook</a>
+    <a href="mailto:tokmandaria@gmail.com">Mail</a>
   </div>
-</section>
-<section id="articles" class="section">
-  <h2>Articles</h2>
-  <div class="articles-container" id="articles-container"></div>
 
-  <div class="slider-nav">
-    <button onclick="prevSlide('articles')">←</button>
-    <button onclick="nextSlide('articles')">→</button>
-  </div>
-</section>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <img src="assets/placeholder-hero.jpg" class="hero-bg" alt="Background" />
+    <h1 class="title-changing"><span id="title-text">Journalist</span></h1>
+
+    <div class="intro-card">
+      <p>Hello 👋</p>
+      <h2>I’m <strong>Tornike Mandaria</strong></h2>
+      <p>
+        A multimedia journalist based in Tbilisi, Georgia, with 8+ years of experience covering
+        politics, conflict, displacement, state repression, Russian influence across the Caucasus and post-Soviet space.
+      </p>
+      <p>
+        Worked with Sky News (UK), Radio Free Europe/Radio Liberty, Süddeutsche Zeitung, taz, Eurasianet.
+      </p>
+      <p>Georgian, English, and Russian.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLES SECTION -->
+  <section id="articles" class="section">
+    <h2>Articles</h2>
+    <div class="articles-container" id="articles-container"></div>
+
+    <div class="slider-nav">
+      <button onclick="prevSlide('articles')">←</button>
+      <button onclick="nextSlide('articles')">→</button>
+    </div>
+  </section>
+
+  <!-- DATA + SCRIPTS -->
+  <script src="data/articles.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
