@@ -1,0 +1,30 @@
+const collabs = [
+  {
+    url: "https://www.youtube.com/watch?v=qzcGVi5Ckds",
+    title: "Police crackdown on Georgian protests",
+    publication: "Sky News",
+    date: "2024-05-25",
+    image: "assets/collab1.jpg"
+  },
+  {
+    url: "https://www.politico.eu/article/georgia-clashes-west-people-sanctions-business-eu-farmers-protests-new-law-parliament/",
+    title: "Georgia’s clash with the West intensifies",
+    publication: "Politico EU",
+    date: "2024-05-20",
+    image: "assets/collab2.jpg"
+  },
+  {
+    url: "https://www.youtube.com/watch?v=QPbfQ9HQrAk",
+    title: "Inside Georgia’s protest movement",
+    publication: "Sky News",
+    date: "2024-05-12",
+    image: "assets/collab3.jpg"
+  },
+  {
+    url: "https://news.sky.com/story/georgia-peaceful-protesters-beaten-by-police-squads-as-kremlins-shadow-looms-13137247",
+    title: "Police brutality at peaceful rally",
+    publication: "Sky News",
+    date: "2024-04-29",
+    image: "assets/collab4.jpg"
+  }
+];
