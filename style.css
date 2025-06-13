@@ -1,4 +1,62 @@
-/* HERO SECTION */
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+/* FLOATING SOCIALS */
+.socials {
+  position: fixed;
+  top: 40%;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  z-index: 999;
+}
+
+.socials a {
+  background: #f2c230;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* HERO */
 .hero {
   position: relative;
   height: 636px;
@@ -35,50 +93,7 @@
   color: #111;
 }
 
-/* STICKY NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  z-index: 1000;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
-  padding: 1rem 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-}
-
-/* FLOATING SOCIAL BUTTONS */
-.socials {
-  position: fixed;
-  top: 40%;
-  left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  z-index: 999;
-}
-
-.socials a {
-  background: #f2c230;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-}
-
+/* SECTION WRAPPER */
 .section {
   padding: 4rem 2rem;
   background: #fdfdfd;
@@ -88,9 +103,9 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  position: relative;
 }
 
+/* ARTICLES */
 .articles-container {
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +145,7 @@
   color: #555;
 }
 
+/* SLIDER NAVIGATION */
 .slider-nav {
   text-align: center;
   margin-top: 1.5rem;
