@@ -1,4 +1,4 @@
-/* RESET & BASE */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR */
+/* === NAVBAR === */
 .navbar {
   position: sticky;
   top: 0;
@@ -35,7 +35,7 @@ body {
   font-weight: 500;
 }
 
-/* FLOATING SOCIALS */
+/* === SOCIALS === */
 .socials {
   position: fixed;
   top: 40%;
@@ -56,7 +56,14 @@ body {
   text-align: center;
 }
 
-/* HERO */
+.socials-footer {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* === HERO === */
 .hero {
   position: relative;
   height: 636px;
@@ -93,7 +100,7 @@ body {
   color: #111;
 }
 
-/* SECTION WRAPPER */
+/* === SECTION WRAPPER === */
 .section {
   padding: 4rem 2rem;
   background: #fdfdfd;
@@ -105,8 +112,11 @@ body {
   font-size: 2rem;
 }
 
-/* ARTICLES */
-.articles-container {
+/* === SLIDER CARDS === */
+.articles-container,
+.videos-container,
+.collabs-container,
+.appearances-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -114,7 +124,10 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.article-card {
+.article-card,
+.video-card,
+.collab-card,
+.appearance-card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -125,27 +138,33 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-.article-card img {
+.article-card img,
+.video-card img,
+.collab-card img,
+.appearance-card img {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
 
-.article-card .info {
+.article-card .info,
+.video-card .info,
+.collab-card .info,
+.appearance-card .info {
   padding: 1rem;
 }
 
-.article-card .info h3 {
+.info h3 {
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
 
-.article-card .info p {
+.info p {
   font-size: 0.9rem;
   color: #555;
 }
 
-/* SLIDER NAVIGATION */
+/* === SLIDER NAVIGATION === */
 .slider-nav {
   text-align: center;
   margin-top: 1.5rem;
@@ -159,4 +178,29 @@ body {
   border-radius: 4px;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+/* === ABOUT SECTION === */
+#toggle-bio {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background: #f2c230;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* === CONTACT SECTION === */
+.contact {
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.contact a {
+  color: #f2c230;
+  font-weight: bold;
+  text-decoration: none;
 }
