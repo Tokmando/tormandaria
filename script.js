@@ -1,4 +1,4 @@
-// Looping titles
+// === Rotating Title Text ===
 const titles = ["Journalist", "Producer", "Freelancer"];
 let i = 0;
 function rotateTitle() {
@@ -7,12 +7,11 @@ function rotateTitle() {
 }
 setInterval(rotateTitle, 2000);
 
-// Hide floating socials near contact
+// === Floating Socials Visibility Toggle Near Contact Section ===
 window.addEventListener("scroll", () => {
   const socials = document.querySelector(".socials");
   const contact = document.querySelector("#contact");
   if (!contact) return;
-
   const contactTop = contact.getBoundingClientRect().top;
   if (contactTop < window.innerHeight * 0.6) {
     socials.style.display = "none";
@@ -20,7 +19,8 @@ window.addEventListener("scroll", () => {
     socials.style.display = "flex";
   }
 });
-// === Load Articles ===
+
+// === ARTICLES ===
 let articleIndex = 0;
 const articlesPerPage = 4;
 
@@ -64,4 +64,4 @@ function prevSlide(section) {
   }
 }
 
-renderArticles(); // initial call
+renderArticles(); // Initial render
