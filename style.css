@@ -367,19 +367,7 @@ button {
   .carousel-item {
     width: 90%;
   }
-   .floating-menu {
-    display: flex  
-    flex-direction: row  
-    flex-wrap: wrap;
-    top: 10px 
-    right: 10px 
-    left: 10px  
-    justify-content: center;   
-    gap: 16px  
-    padding: 10px
-    max-width: calc(100% - 20px);  
-    box-sizing: border-box;
-  }
+  
   .social-icons {
     left: 10px;
     top: 50%;
@@ -738,3 +726,40 @@ button {
   background: rgba(0, 0, 0, 0.15); /* adjust opacity as needed */
   z-index: 1;
 }
+/* === MOBILE HAMBURGER MENU === */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile only: hide menu, show hamburger */
+@media (max-width: 768px) {
+  .floating-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    top: 60px;
+    right: 20px;
+    left: 20px;
+    border-radius: 12px;
+    position: fixed;
+  }
+
+  .floating-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
