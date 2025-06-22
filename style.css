@@ -367,14 +367,14 @@ button {
   .carousel-item {
     width: 90%;
   }
-
   .floating-menu {
-    top: 10px;
-    right: 10px;
-    gap: 20px;
-    padding: 10px 16px;
+    display: flex !important;
+    flex-direction: row !important;
+    top: 10px !important;
+    right: 10px !important;
+    gap: 16px !important;
+    padding: 8px 16px !important;
   }
-
   .social-icons {
     left: 10px;
     top: 50%;
