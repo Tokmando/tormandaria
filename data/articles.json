@@ -1,0 +1,65 @@
+[
+  {
+    "headline": "Queer refugees from Georgia [DE]",
+    "publication": "Süddeutsche Zeitung",
+    "date": "April 17, 2025",
+    "link": "https://www.sueddeutsche.de/projekte/artikel/jetzt/queer-georgien-asyl-flucht-e964544/?reduced=true",
+    "cover": "assets/articles/Fagatta.jpg"
+  },
+  {
+    "headline": "Bidzina Ivanishvili: the oligarch ‘puppet master’ blocking Georgia's path to the EU",
+    "publication": "bne intellinews",
+    "date": "October 25, 2024",
+    "link": "https://www.intellinews.com/bidzina-ivanishvili-the-oligarch-puppet-master-blocking-georgia-s-path-to-the-eu-349773/",
+    "cover": "assets/articles/Bidzina.jpg"
+  },
+  {
+    "headline": "The other way to Europe [DE]",
+    "publication": "taz",
+    "date": "June 13, 2024",
+    "link": "https://taz.de/Politik-und-Fussball-in-Georgien/!6013564/",
+    "cover": "assets/articles/football.jpeg"
+  },
+  {
+    "headline": "Georgian Nightmare [DE]",
+    "publication": "taz",
+    "date": "May 23, 2024",
+    "link": "https://taz.de/Massenproteste-gegen-Agentengesetz/!6009224/",
+    "cover": "assets/articles/taz.jpeg"
+  },
+  {
+    "headline": "EU-Georgia relations hit a new low as Tbilisi warns of foreign-funded power-grab",
+    "publication": "bne intellinews",
+    "date": "May 9, 2024",
+    "link": "https://www.intellinews.com/eu-georgia-relations-hit-a-new-low-as-tbilisi-warns-of-foreign-funded-power-grab-324409/",
+    "cover": "assets/articles/bne.jpg"
+  },
+  {
+    "headline": "For Azerbaijani Journalists Living In Georgia, Their Safe Haven Doesn't Feel So Safe Anymore",
+    "publication": "Radio Free Europe/Radio Liberty",
+    "date": "February 6, 2024",
+    "link": "https://www.rferl.org/a/azerbaijan-journalists-georgia-safe-haven/32808012.html",
+    "cover": "assets/articles/Azeris.png.avif"
+  },
+  {
+    "headline": "Planned Russian base in Abkhazia could threaten Georgia's Middle Corridor dreams",
+    "publication": "Eurasianet",
+    "date": "January 19, 2024",
+    "link": "https://eurasianet.org/planned-russian-base-in-abkhazia-could-threaten-georgias-middle-corridor-dreams",
+    "cover": "assets/articles/ochamchire.jpg"
+  },
+  {
+    "headline": "Ecstasy Laced With Fentanyl: Georgia's Growing Party Drug Problem",
+    "publication": "Radio Free Europe/Radio Liberty",
+    "date": "October 15, 2022",
+    "link": "https://www.rferl.org/a/georgia-fentanyl-ecstasy-drugs-clubs-opiods-deaths/32084524.html",
+    "cover": "assets/articles/fentanyl.jpg.avif"
+  },
+  {
+    "headline": "South Ossetian troops fighting for Russia in Ukraine",
+    "publication": "Eurasianet",
+    "date": "March 29, 2022",
+    "link": "https://eurasianet.org/south-ossetian-troops-fighting-for-russia-in-ukraine",
+    "cover": "assets/articles/ossetians.jpg"
+  }
+]
