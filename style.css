@@ -375,7 +375,7 @@ button {
     right: 10px 
     left: 10px  
     justify-content: center;   
-    gap: 12px  
+    gap: 16px  
     padding: 10px
     max-width: calc(100% - 20px);  
     box-sizing: border-box;
