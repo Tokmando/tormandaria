@@ -368,14 +368,6 @@ button {
     width: 90%;
   }
 
-  .floating-menu {
-    top: 10px;
-    right: 10px;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
   .social-icons {
     left: 10px;
     top: 50%;
