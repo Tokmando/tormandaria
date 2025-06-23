@@ -157,12 +157,12 @@ section {
 
 /* When scrolled past hero */
 .floating-menu.scrolled {
-  background: hwb(0 27% 72% / 0.1); /* translucent dark background */
+  background: rgba(0, 0, 0, 0.8); /* solid black with 80% opacity */
   top: 5px;
   padding: 10px 15px;
-  border-radius: 999px; /* full pill shape */
+  border-radius: 999px;
   box-shadow: 0 4px 12px rgba(66, 65, 65, 0.2);
-  backdrop-filter: blur(8px); /* glassy look */
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   gap: 60px;
