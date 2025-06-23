@@ -734,3 +734,96 @@ button {
   background: rgba(0, 0, 0, 0.15); /* adjust opacity as needed */
   z-index: 1;
 }
+/* HAMBURGER MENU DEFAULT (DESKTOP = HIDDEN) */
+.hamburger-menu,
+.mobile-nav {
+  display: none;
+}
+
+/* === MOBILE MENU === */
+@media (max-width: 768px) {
+  .floating-menu {
+    display: none; /* hide desktop menu on mobile */
+  }
+.hamburger-menu {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+ /* default hamburger */
+#hamburger-btn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+/* turn black after scrolling */
+#hamburger-btn.scrolled {
+  color: black;
+}
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1001;
+}
+.mobile-nav.show {
+  display: flex;
+}
+
+  .mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+
+  .email {
+  font-size: 18px;
+  word-break: break-word;
+  padding: 0 20px;
+  text-align: center;
+}
+
+  .contact-card .contact-text {
+    display: none;
+  }
+
+  /* Align icons horizontally */
+  .contact-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
+  }
+
+  /* Remove background and padding from cards */
+  .contact-card {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    flex: 0 0 auto;
+  }
+
+  /* Clean icon styling */
+  .contact-icon img {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
