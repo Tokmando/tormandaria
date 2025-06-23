@@ -188,5 +188,27 @@
 <script src="data/collabs.js"></script>
 <script src="data/appearances.js"></script>
 <script src="script.js"></script>
+  <script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburgerBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+  });
+
+  // Make menu button turn black after hero
+  window.addEventListener('scroll', () => {
+    const hero = document.querySelector('.hero');
+    const btn = document.getElementById('hamburger-btn');
+    const heroBottom = hero.offsetHeight;
+
+    if (window.scrollY > heroBottom) {
+      btn.classList.add('scrolled');
+    } else {
+      btn.classList.remove('scrolled');
+    }
+  });
+</script>
+
 </body>
 </html>
