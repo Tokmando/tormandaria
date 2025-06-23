@@ -19,16 +19,6 @@ section {
   margin-bottom: 0;
 }
 
-#appearances {
-  margin-bottom: 0px;
-}
-
-#contact {
-  margin-top: 0;
-  padding-top: 0px;
-}
-
-/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -54,11 +44,10 @@ section {
 }
 
 .loop-text {
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-  transition: opacity 0.5s ease;
   display: inline-block;
+  opacity: 0;
   transform: translateY(10px);
+  transition: all 0.4s ease;
 }
 
 .loop-text.show {
@@ -97,7 +86,6 @@ section {
   font-size: 20px;
 }
 
-/* MENU */
 .floating-menu {
   position: fixed;
   top: 40px;
@@ -122,158 +110,39 @@ section {
   position: relative;
 }
 
-/* Removed dividers */
-.floating-menu a::after {
-  display: none;
+.floating-menu a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 1px;
+  background-color: white;
+  opacity: 0.5;
 }
 
 .floating-menu.scrolled {
-  background: black;
-  top: 20px;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  top: 5px;
   padding: 10px 15px;
+  border-radius: 999px;
   box-shadow: 0 4px 12px rgba(66, 65, 65, 0.2);
   backdrop-filter: blur(8px);
+  gap: 60px;
 }
 
-/* SOCIAL */
-.social-icons {
-  position: fixed;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  z-index: 1000;
-  transition: opacity 0.4s ease;
+.floating-menu.scrolled a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  transition: transform 0.3s ease;
+.floating-menu.scrolled a:hover {
+  transform: scale(1.1);
 }
 
-.social-icons.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
-
-/* CAROUSEL */
-.carousel {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 20px;
-  margin: 0 20px;
-}
-
-.carousel-item {
-  flex: 0 0 320px;
-  background: #f7f7f7;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.carousel-item:hover {
-  transform: scale(1.02);
-}
-
-.carousel-item img {
-  width: 100%;
-  border-radius: 6px;
-  margin-top: 10px;
-}
-
-/* ABOUT */
-.about-text {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 40px 20px;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#show-more {
-  margin-top: 20px;
-  padding: 10px 24px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button {
-  font-family: 'Work Sans', sans-serif;
-}
-
-/* ARTICLES */
-#articles {
-  padding: 50px 0 0px 0;
-  background: #fefefe;
-}
-
-.slider {
-  display: flex;
-  overflow-x: auto;
-  gap: 1.5rem;
-  scroll-snap-type: x mandatory;
-}
-
-.article-card {
-  display: block;
-  width: 300px;
-  scroll-snap-align: start;
-  text-decoration: none;
-  color: inherit;
-}
-
-.article-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.article-text {
-  width: 50%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.article-text h3 {
-  font-size: 0.85rem;
-  font-weight: 400;
-  margin: 0;
-}
-
-.article-text .article-date {
-  font-size: 0.85rem;
-  color: gray;
-  margin: 0;
-}
-
-.article-text h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* MOBILE MENU + HAMBURGER */
+/* === Hamburger Button (mobile only) === */
 .hamburger {
   display: none;
   position: fixed;
@@ -287,38 +156,21 @@ button {
   cursor: pointer;
 }
 
-/* === MOBILE STYLES === */
+/* === Mobile Styles === */
 @media (max-width: 768px) {
-  .looped-title {
-    font-size: 36px;
-    left: 20px;
-    top: 100px;
-  }
-
-  .bio-box {
-    width: 90%;
-    left: 5%;
-    right: 5%;
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
   .floating-menu {
     display: none;
     flex-direction: column;
-    align-items: flex-end;
     background: rgba(0, 0, 0, 0.95);
     padding: 20px;
-    border-radius: 12px;
-    position: fixed;
     top: 60px;
     right: 20px;
-    width: auto;
-    z-index: 1050;
+    left: auto;
+    border-radius: 12px;
+    position: fixed;
+    width: max-content;
+    align-items: flex-end;
+    text-align: right;
   }
 
   .floating-menu.show {
@@ -329,26 +181,7 @@ button {
     display: none;
   }
 
-  .floating-menu.scrolled {
-    background: rgba(0, 0, 0, 0.95);
-    top: 60px;
-  }
-
-  .carousel {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: auto;
-  }
-
-  .carousel-item {
-    width: 90%;
-  }
-
-  .social-icons {
-    left: 10px;
-  }
-
-  section {
-    padding: 30px 20px;
+  .hamburger {
+    display: block;
   }
 }
