@@ -12,7 +12,7 @@ function updateLoopedText() {
     looped.textContent = titles[titleIndex];
     looped.classList.add("show");
     titleIndex = (titleIndex + 1) % titles.length;
-  }, 400); // match CSS transition
+  }, 400);
 }
 
 // Initial show
@@ -50,7 +50,6 @@ async function loadCarousel(jsonPath, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // ✅ FIXED COLLABS SECTION RENDERING
     if (containerId === "collabs-carousel" || containerId === "appearances-carousel") {
       container.innerHTML = items.map(item => `
         <div class="collab-card" onclick="window.open('${item.link}', '_blank')">
@@ -66,9 +65,7 @@ async function loadCarousel(jsonPath, containerId) {
       `).join("");
       return;
     }
-    
 
-    // Default rendering for other carousels (e.g. appearances)
     container.innerHTML = items.map(item => `
       <div class="carousel-item" onclick="window.open('${item.link}', '_blank')">
         ${item.cover ? `<img src="${item.cover}" alt="${item.headline}" />` : ""}
@@ -79,7 +76,6 @@ async function loadCarousel(jsonPath, containerId) {
         </div>
       </div>
     `).join("");
-
   } catch (err) {
     console.error(`Failed to load ${jsonPath}:`, err);
   }
@@ -105,13 +101,13 @@ async function loadArticles() {
           <div class="article-text">
             <h3>${article.publication}</h3>
             <p class="article-date">${article.date}</p>
-            <h4>${article.headline}</h4>
+            <h4 class="article-title">${article.headline}</h4>
           </div>
         ` : `
           <div class="article-text">
             <h3>${article.publication}</h3>
             <p class="article-date">${article.date}</p>
-            <h4>${article.headline}</h4>
+            <h4 class="article-title">${article.headline}</h4>
           </div>
           <img src="${article.cover}" class="article-img" alt="${article.headline}" />
         `}
@@ -144,13 +140,13 @@ async function loadVideos() {
           <div class="article-text">
             <h3>${video.publication || 'Video'}</h3>
             <p class="article-date">${video.date || ''}</p>
-            <h4>${video.headline}</h4>
+            <h4 class="article-title">${video.headline}</h4>
           </div>
         ` : `
           <div class="article-text">
             <h3>${video.publication || 'Video'}</h3>
             <p class="article-date">${video.date || ''}</p>
-            <h4>${video.headline}</h4>
+            <h4 class="article-title">${video.headline}</h4>
           </div>
           <img src="${video.cover}" class="article-img" alt="${video.headline}" />
         `}
@@ -161,6 +157,8 @@ async function loadVideos() {
     console.error('Failed to load videos:', err);
   }
 }
+
+// Scroll behavior (desktop only)
 window.addEventListener("scroll", () => {
   const menu = document.querySelector(".floating-menu");
   const hero = document.querySelector(".hero");
@@ -171,33 +169,17 @@ window.addEventListener("scroll", () => {
   const contactTop = contact.getBoundingClientRect().top;
   const windowHeight = window.innerHeight;
 
-  // Switch menu from top to right vertical after hero
+  // Desktop menu color change
   if (heroBottom < 0) {
-    menu.classList.add("right-floating-menu");
+    menu.classList.add("scrolled");
   } else {
-    menu.classList.remove("right-floating-menu");
+    menu.classList.remove("scrolled");
   }
 
-  // Fade out social icons near contact
+  // Fade social icons near contact
   if (contactTop < windowHeight - 100) {
     socialIcons.classList.add("hidden");
   } else {
     socialIcons.classList.remove("hidden");
   }
-});
-window.addEventListener("scroll", () => {
-  const menu = document.querySelector(".floating-menu");
-  const hero = document.querySelector(".hero");
-
-  if (hero.getBoundingClientRect().bottom < 0) {
-    menu.classList.add("scrolled");
-  } else {
-    menu.classList.remove("scrolled");
-  }
-});
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const mobileNav = document.getElementById('mobile-nav');
-
-hamburgerBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('show');
 });
