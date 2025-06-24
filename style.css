@@ -838,3 +838,6 @@ button {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+#appearances .carousel-controls {
+  display: none !important;
+}
