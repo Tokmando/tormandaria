@@ -53,15 +53,16 @@ async function loadCarousel(jsonPath, containerId) {
     if (containerId === "collabs-carousel" || containerId === "appearances-carousel") {
       container.innerHTML = items.map(item => `
         <div class="collab-card" onclick="window.open('${item.link}', '_blank')">
-          <div class="collab-text">
-            <div class="collab-publication">${item.publication}</div>
-            <div class="collab-date">${item.date}</div>
-            <div class="collab-title">${item.headline}</div>
-          </div>
-          <div class="collab-img-wrapper">
-            ${item.cover ? `<img src="${item.cover}" alt="${item.headline}" class="collab-image" />` : ""}
-          </div>
-        </div>
+  <div class="collab-img-wrapper">
+    ${item.cover ? `<img src="${item.cover}" alt="${item.headline}" class="collab-image" />` : ""}
+  </div>
+  <div class="collab-text">
+    <div class="collab-publication">${item.publication}</div>
+    <div class="collab-date">${item.date}</div>
+    <div class="collab-title">${item.headline}</div>
+  </div>
+</div>
+
       `).join("");
       return;
     }
@@ -81,82 +82,51 @@ async function loadCarousel(jsonPath, containerId) {
   }
 }
 
-// Load Articles
 async function loadArticles() {
   try {
     const res = await fetch('data/articles.json');
     const articles = await res.json();
-    const container = document.getElementById('articles-container');
-    container.innerHTML = '';
-
-    articles.forEach((article, index) => {
-      const isImageLeft = index % 2 === 0;
-      const card = document.createElement('a');
-      card.href = article.link;
-      card.target = "_blank";
-      card.className = `article-card ${isImageLeft ? 'left' : 'right'}`;
-      card.innerHTML = `
-        ${isImageLeft ? `
-          <img src="${article.cover}" class="article-img" alt="${article.headline}" />
-          <div class="article-text">
-            <h3>${article.publication}</h3>
-            <p class="article-date">${article.date}</p>
-            <h4 class="article-title">${article.headline}</h4>
-          </div>
-        ` : `
-          <div class="article-text">
-            <h3>${article.publication}</h3>
-            <p class="article-date">${article.date}</p>
-            <h4 class="article-title">${article.headline}</h4>
-          </div>
-          <img src="${article.cover}" class="article-img" alt="${article.headline}" />
-        `}
-      `;
-      container.appendChild(card);
-    });
+    const container = document.getElementById('articles-carousel');
+    container.innerHTML = articles.map(article => `
+      <div class="collab-card" onclick="window.open('${article.link}', '_blank')">
+  <div class="collab-img-wrapper">
+    ${article.cover ? `<img src="${article.cover}" alt="${article.headline}" class="collab-image" />` : ""}
+  </div>
+  <div class="collab-text">
+    <div class="collab-publication">${article.publication}</div>
+    <div class="collab-date">${article.date}</div>
+    <div class="collab-title">${article.headline}</div>
+  </div>
+</div>
+    `).join('');
   } catch (err) {
     console.error('Failed to load articles:', err);
   }
 }
 
-// Load Videos
 async function loadVideos() {
   try {
     const res = await fetch('data/videos.json');
     const videos = await res.json();
-    const container = document.getElementById('videos-container');
-    if (!container) return;
-    container.innerHTML = '';
-
-    videos.forEach((video, index) => {
-      const isImageLeft = index % 2 === 0;
-      const card = document.createElement('a');
-      card.href = video.link;
-      card.target = "_blank";
-      card.className = `article-card ${isImageLeft ? 'left' : 'right'}`;
-      card.innerHTML = `
-        ${isImageLeft ? `
-          <img src="${video.cover}" class="article-img" alt="${video.headline}" />
-          <div class="article-text">
-            <h3>${video.publication || 'Video'}</h3>
-            <p class="article-date">${video.date || ''}</p>
-            <h4 class="article-title">${video.headline}</h4>
-          </div>
-        ` : `
-          <div class="article-text">
-            <h3>${video.publication || 'Video'}</h3>
-            <p class="article-date">${video.date || ''}</p>
-            <h4 class="article-title">${video.headline}</h4>
-          </div>
-          <img src="${video.cover}" class="article-img" alt="${video.headline}" />
-        `}
-      `;
-      container.appendChild(card);
-    });
+    const container = document.getElementById('videos-carousel');
+    container.innerHTML = videos.map(video => `
+      <div class="collab-card" onclick="window.open('${video.link}', '_blank')">
+  <div class="collab-img-wrapper">
+    ${video.cover ? `<img src="${video.cover}" alt="${video.headline}" class="collab-image" />` : ""}
+  </div>
+  <div class="collab-text">
+    <div class="collab-publication">${video.publication || 'Video'}</div>
+    <div class="collab-date">${video.date || ''}</div>
+    <div class="collab-title">${video.headline}</div>
+  </div>
+</div>
+    `).join('');
   } catch (err) {
     console.error('Failed to load videos:', err);
   }
 }
+
+
 
 // Scroll behavior (desktop only)
 window.addEventListener("scroll", () => {
@@ -182,4 +152,26 @@ window.addEventListener("scroll", () => {
   } else {
     socialIcons.classList.remove("hidden");
   }
+});
+document.querySelectorAll('.carousel-controls').forEach(control => {
+  const targetId = control.getAttribute('data-target');
+  const carousel = document.getElementById(targetId);
+  const leftArrow = control.querySelector('.carousel-arrow.left');
+  const rightArrow = control.querySelector('.carousel-arrow.right');
+  const progress = control.querySelector('.carousel-progress');
+
+  leftArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+
+  rightArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+
+  carousel.addEventListener('scroll', () => {
+    const scrollAmount = carousel.scrollLeft;
+    const totalScroll = carousel.scrollWidth - carousel.clientWidth;
+    const percent = totalScroll > 0 ? (scrollAmount / totalScroll) * 100 : 0;
+    progress.style.width = `${percent}%`;
+  });
 });
