@@ -57,56 +57,75 @@
   </div>
 
   <section id="articles">
-    <h2>Articles</h2>
-    <div id="articles-container">
-      <!-- Articles will be injected here -->
-    </div>
-  </section>
+  <h2>Articles</h2>
+  <div class="carousel" id="articles-carousel"></div>
+  <div class="carousel-controls" data-target="articles-carousel">
+  <button class="carousel-arrow left">&#8592;</button>
+  <div class="carousel-track"><div class="carousel-progress"></div></div>
+  <button class="carousel-arrow right">&#8594;</button>
+</div>
 
-  <section id="videos">
-    <h2>Videos</h2>
-      <div class="videos-container" id="videos-container">
-        <!-- Video cards will be injected here -->
-    </div>
-  </section>
+</section>
+
+
+<section id="videos">
+  <h2>Videos</h2>
+  <div class="carousel" id="videos-carousel"></div>
+  <div class="carousel-controls" data-target="videos-carousel">
+  <button class="carousel-arrow left">&#8592;</button>
+  <div class="carousel-track"><div class="carousel-progress"></div></div>
+  <button class="carousel-arrow right">&#8594;</button>
+</div>
+</section>
+
 
   <!-- ✅ FIXED COLLABS SECTION -->
   <section id="collabs">
     <h2>Collabs</h2>
+     <div class="carousel-wrapper">
     <div class="carousel" id="collabs-carousel">
       <div class="collab-card">
+        <div class="collab-img-wrapper">
+          <img src="assets/images/skynews-protests.jpg" class="collab-image" alt="Angry protests persist in Georgia">
+        </div>
         <div class="collab-text">
           <div class="collab-publication">Sky News</div>
           <div class="collab-date">Dec 1, 2024</div>
           <div class="collab-title">Georgians worry about ending up like Ukraine as government leans towards Russia</div>
         </div>
-        <div class="collab-img-wrapper">
-          <img src="assets/images/skynews-protests.jpg" class="collab-image" alt="Angry protests persist in Georgia">
-        </div>
       </div>
 
       <div class="collab-card">
+        <div class="collab-img-wrapper">
+          <img src="assets/images/johnnyharris-georgia.jpg" class="collab-image" alt="Map of Georgia and Russia">
+        </div>
         <div class="collab-text">
           <div class="collab-publication">Johnny Harris</div>
           <div class="collab-date">Sep 26, 2024</div>
           <div class="collab-title">Why Georgia Fears Being Swallowed by Russia</div>
         </div>
-        <div class="collab-img-wrapper">
-          <img src="assets/images/johnnyharris-georgia.jpg" class="collab-image" alt="Map of Georgia and Russia">
-        </div>
+        
       </div>
 
       <div class="collab-card">
+        <div class="collab-img-wrapper">
+          <img src="assets/images/rferl-prejudice.jpg" class="collab-image" alt="Prejudice and pride">
+        </div>
         <div class="collab-text">
           <div class="collab-publication">Radio Free Europe/Radio Liberty</div>
           <div class="collab-date">August 19, 2021</div>
           <div class="collab-title">Prejudice and pride</div>
         </div>
-        <div class="collab-img-wrapper">
-          <img src="assets/images/rferl-prejudice.jpg" class="collab-image" alt="Prejudice and pride">
-        </div>
       </div>
     </div>
+    <div class="carousel-controls" data-target="collabs-carousel">
+      <button class="carousel-arrow left">&#8592;</button>
+      <div class="carousel-track">
+        <div class="carousel-progress"></div>
+      </div>
+      <button class="carousel-arrow right">&#8594;</button>
+    </div>
+  </div>
   </section> 
 
   <section id="about">
@@ -148,8 +167,12 @@
   <section id="appearances">
     <h2>Appearances</h2>
     <div class="carousel" id="appearances-carousel"></div>
+    <div class="carousel-controls" data-target="appearances-carousel">
+  <button class="carousel-arrow left">&#8592;</button>
+  <div class="carousel-track"><div class="carousel-progress"></div></div>
+  <button class="carousel-arrow right">&#8594;</button>
+</div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact">
     <div class="contact-wrapper">
@@ -198,9 +221,17 @@
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileNav = document.getElementById('mobile-nav');
 
-  hamburgerBtn.addEventListener('click', () => {
-    mobileNav.classList.toggle('show');
+ // Toggle nav on button
+hamburgerBtn.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+});
+
+// Close nav when a link is clicked
+document.querySelectorAll('#mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('show');
   });
+});
 
   // Make menu button turn black after hero
   window.addEventListener('scroll', () => {
