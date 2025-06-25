@@ -525,14 +525,14 @@ button {
   transition: transform 0.2s ease, background 0.3s ease;
 }
 .contact-card:hover {
-  background: #fcd34d;
-  color: #000;
+  background: none;
+  color: inherit;
   transform: translateY(-5px);
 }
 
 .contact-card:hover h4,
 .contact-card:hover p {
-  color: #000;
+  color: inherit;
 }
 
 .contact-text h4 {
