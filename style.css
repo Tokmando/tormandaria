@@ -880,3 +880,10 @@ button {
 .loop-text {
   display: inline;
 }
+  .floating-menu a {
+    transition: transform 0.3s ease;
+  }
+
+  .floating-menu a:hover {
+    transform: scale(1.1);
+  }
