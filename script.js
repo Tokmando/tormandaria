@@ -9,19 +9,19 @@ function updateLoopedText() {
   looped.classList.remove("show");
 
   setTimeout(() => {
+    titleIndex = (titleIndex + 1) % titles.length;
     looped.textContent = titles[titleIndex];
     looped.classList.add("show");
-    titleIndex = (titleIndex + 1) % titles.length;
   }, 400);
 }
 
-// Initial show
-setTimeout(() => {
-  looped.classList.add("show");
-}, 100);
+// Show first item immediately
+looped.textContent = titles[titleIndex];
+looped.classList.add("show");
 
 // Loop every 2 seconds
 setInterval(updateLoopedText, 2000);
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const showMoreBtn = document.getElementById("show-more");
