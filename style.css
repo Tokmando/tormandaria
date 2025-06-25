@@ -254,12 +254,7 @@ button {
     left: 20px;
     top: 100px;
   }
-  .floating-menu {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-  }
-
+  
   .bio-box {
     width: 90%;
     left: 5%;
@@ -565,22 +560,57 @@ button {
   background: rgba(0, 0, 0, 0.15); /* adjust opacity as needed */
   z-index: 1;
 }
-/* HAMBURGER MENU DEFAULT (DESKTOP = HIDDEN) */
-.hamburger-menu,
-.mobile-nav {
-  display: none;
+/* === FINAL RESPONSIVE MENU RULES === */
+@media (max-width: 768px) {
+  /* Hide floating menu on mobile */
+  .floating-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 12px;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1001;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-nav.show {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
 }
 
-  .floating-menu {
-    display: none; /* hide desktop menu on mobile */
-  }
-.hamburger-menu {
-  display: block;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
  /* default hamburger */
 #hamburger-btn {
   font-size: 30px;
@@ -608,17 +638,7 @@ button {
   gap: 16px;
   z-index: 1001;
 }
-.mobile-nav.show {
-  display: flex;
-}
 
-  .mobile-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-  }
 
   .email {
   font-size: 18px;
@@ -848,4 +868,3 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
-
