@@ -223,6 +223,12 @@ document.querySelectorAll('#mobile-nav a').forEach(link => {
     mobileNav.classList.remove('show');
   });
 });
+// Close mobile nav on scroll (mobile only)
+window.addEventListener('scroll', () => {
+  if (window.innerWidth <= 768) {
+    mobileNav.classList.remove('show');
+  }
+});
 
   // Make menu button turn black after hero
   window.addEventListener('scroll', () => {
