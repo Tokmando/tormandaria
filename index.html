@@ -123,21 +123,24 @@
   </div>
   </section> 
   <section id="about">
-    <h2>About</h2>
-    <div class="about-wrapper">
-      <div class="about-row">
-        <div class="about-img">
-          <img src="assets/about/about2.jpg" alt="Tornike Mandaria" />
-        </div>
-        <div class="about-summary">
-          <p id="short-bio">
+  <h2>About</h2>
+  <div class="about-wrapper">
+    <!-- Slideshow container -->
+    <div class="about-slideshow">
+      <img src="assets/about/about1.jpg" class="about-slide active" alt="Tornike Mandaria">
+      <img src="assets/about/about2.jpg" class="about-slide" alt="Tornike Mandaria">
+      <img src="assets/about/about3.jpg" class="about-slide" alt="Tornike Mandaria">
+    </div>
+
+    <!-- Bio text -->
+    <div class="about-summary">
+      <p id="short-bio">
             Tornike Mandaria is a journalist based in Tbilisi, Georgia, reporting on politics, conflict, authoritarianism, human rights, and Russian influence across Georgia, the Caucasus, and the wider post-Soviet region. He works across formats including feature writing, live reporting, video production, and translation/field production.
           </p>
-          <button id="show-more">Show More</button>
-        </div>
-      </div>
-
-      <div id="full-bio" style="display: none;">
+      <button id="show-more">Show More</button>
+    </div>
+<!-- Full bio -->
+    <div id="full-bio" style="display: none;">
         <p>
           He joined Radio Free Europe/Radio Liberty in 2019 as a Václav Havel Fellow and continued at the company for five years as a multimedia journalist. During that time, he frequently reported from the front lines of Georgia’s pro-democracy, anti-government, and anti-Russian protests—often under tear gas, pepper spray, and water cannon fire—documenting police brutality and state repression.
           <br><br>
@@ -242,6 +245,23 @@ window.addEventListener('scroll', () => {
       btn.classList.remove('scrolled');
     }
   });
+</script>
+<script>
+  // Simple slideshow rotation
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".about-slide");
+
+  function showSlide() {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === slideIndex) slide.classList.add("active");
+    });
+
+    slideIndex = (slideIndex + 1) % slides.length;
+    setTimeout(showSlide, 3000); // 3-second interval
+  }
+
+  showSlide();
 </script>
 
 </body>
