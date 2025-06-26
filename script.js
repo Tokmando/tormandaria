@@ -22,7 +22,6 @@ looped.classList.add("show");
 // Loop every 2 seconds
 setInterval(updateLoopedText, 2000);
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const showMoreBtn = document.getElementById("show-more");
   const fullBio = document.getElementById("full-bio");
