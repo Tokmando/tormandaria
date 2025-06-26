@@ -88,10 +88,6 @@ section {
   margin: 0;
   font-size: 20px;
 }
-.looped-title {
-  position: absolute;
-  z-index: 2;
-}
 
 .bio-box {
   position: absolute;
@@ -867,19 +863,11 @@ button {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
-.looped-title {
-  position: absolute;
-  top: 160px;
-  left: 160px;
-  font-size: 100px;
-  font-weight: 700;
-  color: #fcd34d;
-  z-index: 2; /* higher than overlay */
-}
 
 .loop-text {
   display: inline;
 }
+
   .floating-menu a {
     transition: transform 0.3s ease;
   }
@@ -887,3 +875,4 @@ button {
   .floating-menu a:hover {
     transform: scale(1.1);
   }
+
